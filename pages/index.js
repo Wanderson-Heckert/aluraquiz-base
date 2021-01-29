@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import React from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
@@ -38,25 +37,26 @@ export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
-        <title>Alura Quiz - Modelo Base</title>
+        <title>{db.title}</title>
       </Head>
       <QuizContainer>
         <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>The Lengend of Zelda</h1>
+            <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
+            <p>{db.description}</p>
             <form onSubmit={function (infosDoEvento) {
               infosDoEvento.preventDefault();
               router.push(`/quiz?name=${name}`);
-              console.log('Fazendo uma submissao por meio do react');
+              console.log('Fazendo uma submissão por meio do react');
             }}
             >
               <Input
                 name="nomeDoUsuario"
                 onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
-                placeholder="Diz seu nome ai"
+                placeholder="Diz ai seu nome"
                 value={name}
               />
               <Button type="submit" disabled={name.length === 0}>
@@ -68,7 +68,7 @@ export default function Home() {
 
         <Widget>
           <Widget.Content>
-            <h1>Quiz da galera</h1>
+            <h1>Quizes da Galera</h1>
 
             <p>lorem ipsum dolor sit amet...</p>
           </Widget.Content>
